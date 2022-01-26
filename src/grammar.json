@@ -1515,7 +1515,7 @@
                   "name": "return_type",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "type"
+                    "name": "expression"
                   }
                 }
               ]
@@ -2354,7 +2354,7 @@
             "name": "type",
             "content": {
               "type": "SYMBOL",
-              "name": "type"
+              "name": "expression"
             }
           },
           {
@@ -3412,7 +3412,7 @@
                   "name": "type",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "type"
+                    "name": "expression"
                   }
                 }
               ]
@@ -3429,7 +3429,7 @@
                   "name": "type",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "type"
+                    "name": "expression"
                   }
                 },
                 {
@@ -3913,15 +3913,11 @@
             "name": "type",
             "content": {
               "type": "SYMBOL",
-              "name": "type"
+              "name": "expression"
             }
           }
         ]
       }
-    },
-    "type": {
-      "type": "SYMBOL",
-      "name": "expression"
     },
     "keyword_argument": {
       "type": "SEQ",

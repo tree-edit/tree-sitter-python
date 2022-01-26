@@ -359,7 +359,7 @@ module.exports = grammar({
       optional(
         seq(
           '->',
-          field('return_type', $.type)
+          field('return_type', $.expression)
         )
       ),
       ':',
@@ -534,7 +534,7 @@ module.exports = grammar({
     typed_default_parameter: $ => prec(PREC.typed_parameter, seq(
       field('name', $.identifier),
       ':',
-      field('type', $.type),
+      field('type', $.expression),
       '=',
       field('value', $.expression)
     )),
@@ -690,8 +690,8 @@ module.exports = grammar({
       field('left', $._left_hand_side),
       choice(
         seq('=', field('right', $._right_hand_side)),
-        seq(':', field('type', $.type)),
-        seq(':', field('type', $.type), '=', field('right', $._right_hand_side))
+        seq(':', field('type', $.expression)),
+        seq(':', field('type', $.expression), '=', field('right', $._right_hand_side))
       )
     ),
 
@@ -780,10 +780,8 @@ module.exports = grammar({
         $.dictionary_splat_pattern
       ),
       ':',
-      field('type', $.type)
+      field('type', $.expression)
     )),
-
-    type: $ => $.expression,
 
     keyword_argument: $ => seq(
       field('name', choice($.identifier, $.keyword_identifier, alias("match", $.identifier))),

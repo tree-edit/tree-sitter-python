@@ -618,10 +618,9 @@ tail_leaves: List[Leaf] = []
   (expression_statement
     (assignment
       (identifier)
-      (type
-        (subscript
-          (identifier)
-          (identifier)))
+      (subscript
+        (identifier)
+        (identifier))
       (list))))
 
 ================================================================================
@@ -718,11 +717,10 @@ foo(x := 3, cat='vector')
     (parameters
       (typed_default_parameter
         (identifier)
-        (type
-          (parenthesized_expression
-            (named_expression
-              (identifier)
-              (integer))))
+        (parenthesized_expression
+          (named_expression
+            (identifier)
+            (integer)))
         (integer)))
     (block
       (return_statement

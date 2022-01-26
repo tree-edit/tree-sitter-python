@@ -30,7 +30,6 @@
 
 (identifier) @variable
 (attribute attribute: (identifier) @property)
-(type (identifier) @type)
 
 ; Literals
 
