@@ -66,6 +66,10 @@
         "named": true
       },
       {
+        "type": "expression",
+        "named": true
+      },
+      {
         "type": "expression_statement",
         "named": true
       },

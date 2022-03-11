@@ -73,6 +73,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "expression"
+        },
+        {
+          "type": "SYMBOL",
           "name": "future_import_statement"
         },
         {
@@ -537,12 +541,16 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "expression"
-        },
-        {
           "type": "SEQ",
           "members": [
+            {
+              "type": "SYMBOL",
+              "name": "expression"
+            },
+            {
+              "type": "STRING",
+              "value": ","
+            },
             {
               "type": "SEQ",
               "members": [

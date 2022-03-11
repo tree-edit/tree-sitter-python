@@ -88,6 +88,7 @@ module.exports = grammar({
     ),
 
     _simple_statement: $ => choice(
+      $.expression,
       $.future_import_statement,
       $.import_statement,
       $.import_from_statement,
@@ -182,8 +183,8 @@ module.exports = grammar({
     ),
 
     expression_statement: $ => choice(
-      $.expression,
-      seq(commaSep1($.expression), optional(',')),
+      //: XXX
+      seq($.expression, ",", commaSep1($.expression), optional(',')),
       $.assignment,
       $.augmented_assignment,
       $.yield

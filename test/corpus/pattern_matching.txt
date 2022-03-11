@@ -27,40 +27,36 @@ match command.split():
         (list
           (string)))
       (block
-        (expression_statement
-          (call
-            (identifier)
-            (argument_list
-              (string))))
-        (expression_statement
-          (call
-            (identifier)
-            (argument_list)))))
+        (call
+          (identifier)
+          (argument_list
+            (string)))
+        (call
+          (identifier)
+          (argument_list))))
     (case_clause
       (case_pattern
         (list
           (string)))
       (block
-        (expression_statement
-          (call
-            (attribute
-              (identifier)
-              (identifier))
-            (argument_list)))))
+        (call
+          (attribute
+            (identifier)
+            (identifier))
+          (argument_list))))
     (case_clause
       (case_pattern
         (list
           (string)
           (identifier)))
       (block
-        (expression_statement
-          (call
-            (attribute
-              (identifier)
-              (identifier))
-            (argument_list
-              (identifier)
-              (identifier))))))
+        (call
+          (attribute
+            (identifier)
+            (identifier))
+          (argument_list
+            (identifier)
+            (identifier)))))
     (case_clause
       (case_pattern
         (list
@@ -106,14 +102,13 @@ match command.split():
           (identifier)
           (identifier)
           (block
-            (expression_statement
-              (call
-                (attribute
-                  (identifier)
-                  (identifier))
-                (argument_list
-                  (identifier)
-                  (identifier))))))))))
+            (call
+              (attribute
+                (identifier)
+                (identifier))
+              (argument_list
+                (identifier)
+                (identifier)))))))))
 
 ================================================================================
 Adding a wild card
@@ -142,8 +137,7 @@ match command.split():
         (list
           (string)))
       (block
-        (expression_statement
-          (ellipsis))
+        (ellipsis)
         (comment)))
     (case_clause
       (case_pattern
@@ -164,14 +158,13 @@ match command.split():
       (case_pattern
         (identifier))
       (block
-        (expression_statement
-          (call
-            (identifier)
-            (argument_list
-              (string
-                (interpolation
-                  (identifier)
-                  (type_conversion))))))))))
+        (call
+          (identifier)
+          (argument_list
+            (string
+              (interpolation
+                (identifier)
+                (type_conversion)))))))))
 
 ================================================================================
 Or patterns
