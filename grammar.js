@@ -493,7 +493,6 @@ module.exports = grammar({
       $.identifier,
       $.typed_parameter,
       $.default_parameter,
-      $.typed_default_parameter,
       $.list_splat_pattern,
       $.tuple_pattern,
       $.keyword_separator,
@@ -525,18 +524,10 @@ module.exports = grammar({
     ),
 
     default_parameter: $ => seq(
-      field('name', $.identifier),
+      field('name', choice($.identifier, $.typed_parameter)),
       '=',
       field('value', $.expression)
     ),
-
-    typed_default_parameter: $ => prec(PREC.typed_parameter, seq(
-      field('name', $.identifier),
-      ':',
-      field('type', $.expression),
-      '=',
-      field('value', $.expression)
-    )),
 
     list_splat_pattern: $ => seq(
       '*',
@@ -678,6 +669,7 @@ module.exports = grammar({
       field('body', $.expression)
     )),
 
+    // TODO
     lambda_within_for_in_clause: $ => seq(
       'lambda',
       field('parameters', optional($.lambda_parameters)),

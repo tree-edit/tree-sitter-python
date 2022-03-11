@@ -629,9 +629,10 @@ async def d(a:str="default", b=c) -> None:
   (function_definition
     name: (identifier)
     parameters: (parameters
-      (typed_default_parameter
-        name: (identifier)
-        type: (identifier)
+      (default_parameter
+        name: (typed_parameter
+          (identifier)
+          type: (identifier))
         value: (string))
       (default_parameter
         name: (identifier)

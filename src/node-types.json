@@ -198,10 +198,6 @@
         "named": true
       },
       {
-        "type": "typed_default_parameter",
-        "named": true
-      },
-      {
         "type": "typed_parameter",
         "named": true
       }
@@ -1097,6 +1093,10 @@
         "types": [
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "typed_parameter",
             "named": true
           }
         ]
@@ -2398,42 +2398,6 @@
           "named": true
         }
       ]
-    }
-  },
-  {
-    "type": "typed_default_parameter",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "expression",
-            "named": true
-          }
-        ]
-      },
-      "value": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "expression",
-            "named": true
-          }
-        ]
-      }
     }
   },
   {

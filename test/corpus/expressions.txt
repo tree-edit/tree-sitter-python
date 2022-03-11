@@ -649,12 +649,13 @@ foo(x := 3, cat='vector')
   (function_definition
     (identifier)
     (parameters
-      (typed_default_parameter
-        (identifier)
-        (parenthesized_expression
-          (named_expression
-            (identifier)
-            (integer)))
+      (default_parameter
+        (typed_parameter
+          (identifier)
+          (parenthesized_expression
+            (named_expression
+              (identifier)
+              (integer))))
         (integer)))
     (block
       (return_statement
