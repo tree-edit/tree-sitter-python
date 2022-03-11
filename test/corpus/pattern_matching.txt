@@ -405,8 +405,7 @@ match 0:
     (case_clause
       (case_pattern
         (integer))
-      (if_clause
-        (false))
+      (false)
       (block
         (expression_statement
           (assignment
@@ -415,8 +414,7 @@ match 0:
     (case_clause
       (case_pattern
         (integer))
-      (if_clause
-        (true))
+      (true)
       (block
         (expression_statement
           (assignment

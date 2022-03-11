@@ -1067,8 +1067,17 @@
               "type": "FIELD",
               "name": "guard",
               "content": {
-                "type": "SYMBOL",
-                "name": "if_clause"
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "if"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "expression"
+                  }
+                ]
               }
             },
             {
@@ -4255,8 +4264,17 @@
                 "name": "for_in_clause"
               },
               {
-                "type": "SYMBOL",
-                "name": "if_clause"
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "if"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "expression"
+                  }
+                ]
               }
             ]
           }
@@ -4446,19 +4464,6 @@
           }
         ]
       }
-    },
-    "if_clause": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "if"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "expression"
-        }
-      ]
     },
     "conditional_expression": {
       "type": "PREC_RIGHT",

@@ -460,8 +460,7 @@ List comprehensions
         (integer)
         (integer)
         (integer)))
-    (if_clause
-      (true)))
+    (true))
   (list_comprehension
     (identifier)
     (for_in_clause
@@ -470,10 +469,9 @@ List comprehensions
         (true))
       (lambda
         (false)))
-    (if_clause
-      (call
-        (identifier)
-        (argument_list)))))
+    (call
+      (identifier)
+      (argument_list))))
 
 ================================================================================
 Dictionaries

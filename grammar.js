@@ -278,7 +278,7 @@ module.exports = grammar({
         )
       ),
       optional(','),
-      optional(field('guard', $.if_clause)),
+      optional(field('guard', seq('if', $.expression))),
       ':',
       field('consequence', $._suite)
     ),
@@ -855,7 +855,10 @@ module.exports = grammar({
       $.for_in_clause,
       repeat(choice(
         $.for_in_clause,
-        $.if_clause
+        seq(
+          'if',
+          $.expression
+        )
       ))
     ),
 
@@ -880,11 +883,6 @@ module.exports = grammar({
       field('right', commaSep1($._expression_within_for_in_clause)),
       optional(',')
     )),
-
-    if_clause: $ => seq(
-      'if',
-      $.expression
-    ),
 
     conditional_expression: $ => prec.right(PREC.conditional, seq(
       $.expression,
