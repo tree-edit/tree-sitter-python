@@ -113,7 +113,6 @@
   "lambda"
   "nonlocal"
   "pass"
-  "print"
   "raise"
   "return"
   "try"

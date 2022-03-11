@@ -1,5 +1,4 @@
-tree-sitter-python
-==================
+### [WIP] Re-working of `tree-sitter-python` for tree-edit purposes
 
 [![build](https://github.com/tree-sitter/tree-sitter-python/actions/workflows/ci.yml/badge.svg)](https://github.com/tree-sitter/tree-sitter-python/actions/workflows/ci.yml)
 
