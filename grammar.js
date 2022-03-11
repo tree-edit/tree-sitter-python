@@ -115,7 +115,7 @@ module.exports = grammar({
 
     relative_import: $ => seq(
       $.import_prefix,
-      optional($.dotted_name)
+      optional($._dotted_name)
     ),
 
     future_import_statement: $ => seq(
@@ -132,7 +132,7 @@ module.exports = grammar({
       'from',
       field('module_name', choice(
         $.relative_import,
-        $.dotted_name
+        $._dotted_name
       )),
       'import',
       choice(
@@ -144,14 +144,14 @@ module.exports = grammar({
 
     _import_list: $ => seq(
       commaSep1(field('name', choice(
-        $.dotted_name,
+        $._dotted_name,
         $.aliased_import
       ))),
       optional(',')
     ),
 
     aliased_import: $ => seq(
-      field('name', $.dotted_name),
+      field('name', $._dotted_name),
       'as',
       field('alias', $.identifier)
     ),
@@ -477,7 +477,7 @@ module.exports = grammar({
       )
     )),
 
-    dotted_name: $ => sep1($.identifier, '.'),
+    _dotted_name: $ => sep1($.identifier, '.'),
 
     // Patterns
 

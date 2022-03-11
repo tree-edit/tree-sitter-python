@@ -338,11 +338,15 @@
         ]
       },
       "name": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
-            "type": "dotted_name",
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "identifier",
             "named": true
           }
         ]
@@ -1185,21 +1189,6 @@
     }
   },
   {
-    "type": "dotted_name",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "elif_clause",
     "named": true,
     "fields": {
@@ -1516,11 +1505,15 @@
         "required": true,
         "types": [
           {
+            "type": ".",
+            "named": false
+          },
+          {
             "type": "aliased_import",
             "named": true
           },
           {
-            "type": "dotted_name",
+            "type": "identifier",
             "named": true
           }
         ]
@@ -1632,11 +1625,15 @@
     "named": true,
     "fields": {
       "module_name": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
-            "type": "dotted_name",
+            "type": ".",
+            "named": false
+          },
+          {
+            "type": "identifier",
             "named": true
           },
           {
@@ -1650,11 +1647,15 @@
         "required": false,
         "types": [
           {
+            "type": ".",
+            "named": false
+          },
+          {
             "type": "aliased_import",
             "named": true
           },
           {
-            "type": "dotted_name",
+            "type": "identifier",
             "named": true
           }
         ]
@@ -1685,11 +1686,15 @@
         "required": true,
         "types": [
           {
+            "type": ".",
+            "named": false
+          },
+          {
             "type": "aliased_import",
             "named": true
           },
           {
-            "type": "dotted_name",
+            "type": "identifier",
             "named": true
           }
         ]
@@ -2180,7 +2185,7 @@
       "required": true,
       "types": [
         {
-          "type": "dotted_name",
+          "type": "identifier",
           "named": true
         },
         {

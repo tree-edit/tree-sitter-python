@@ -10,21 +10,17 @@ import a.b.c
 
 (module
   (import_statement
-    (dotted_name
-      (identifier))
-    (dotted_name
-      (identifier)))
+    (identifier)
+    (identifier))
   (import_statement
     (aliased_import
-      (dotted_name
-        (identifier)
-        (identifier))
+      (identifier)
+      (identifier)
       (identifier)))
   (import_statement
-    (dotted_name
-      (identifier)
-      (identifier)
-      (identifier))))
+    (identifier)
+    (identifier)
+    (identifier)))
 
 ================================================================================
 Import-from statements
@@ -43,51 +39,37 @@ from ..a import b
 
 (module
   (import_from_statement
-    (dotted_name
-      (identifier))
-    (dotted_name
-      (identifier)))
+    (identifier)
+    (identifier))
   (import_from_statement
-    (dotted_name
-      (identifier))
+    (identifier)
     (wildcard_import))
   (import_from_statement
-    (dotted_name
-      (identifier))
-    (dotted_name
-      (identifier))
-    (dotted_name
-      (identifier)))
+    (identifier)
+    (identifier)
+    (identifier))
   (import_from_statement
-    (dotted_name
-      (identifier)
-      (identifier))
-    (dotted_name
-      (identifier)))
+    (identifier)
+    (identifier)
+    (identifier))
   (import_from_statement
     (relative_import
       (import_prefix))
-    (dotted_name
-      (identifier)))
+    (identifier))
   (import_from_statement
     (relative_import
       (import_prefix))
-    (dotted_name
-      (identifier)))
+    (identifier))
   (import_from_statement
     (relative_import
       (import_prefix)
-      (dotted_name
-        (identifier)))
-    (dotted_name
-      (identifier)))
+      (identifier))
+    (identifier))
   (import_from_statement
     (relative_import
       (import_prefix)
-      (dotted_name
-        (identifier)))
-    (dotted_name
-      (identifier))))
+      (identifier))
+    (identifier)))
 
 ================================================================================
 Future import statements
@@ -101,20 +83,14 @@ from __future__ import (absolute_import, division, print_function,
 
 (module
   (future_import_statement
-    (dotted_name
-      (identifier)))
+    (identifier))
   (future_import_statement
-    (dotted_name
-      (identifier)))
+    (identifier))
   (future_import_statement
-    (dotted_name
-      (identifier))
-    (dotted_name
-      (identifier))
-    (dotted_name
-      (identifier))
-    (dotted_name
-      (identifier))))
+    (identifier)
+    (identifier)
+    (identifier)
+    (identifier)))
 
 ================================================================================
 Print statements
