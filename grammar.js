@@ -94,7 +94,7 @@ module.exports = grammar({
       $.import_from_statement,
       $.print_statement,
       $.assert_statement,
-      $.expression_statement,
+      $.comma_statement,
       $.return_statement,
       $.delete_statement,
       $.raise_statement,
@@ -103,6 +103,9 @@ module.exports = grammar({
       $.continue_statement,
       $.global_statement,
       $.nonlocal_statement,
+      $.assignment,
+      $.augmented_assignment,
+      $.yield,
       $.exec_statement
     ),
 
@@ -182,12 +185,9 @@ module.exports = grammar({
       commaSep1($.expression)
     ),
 
-    expression_statement: $ => choice(
+    comma_statement: $ => choice(
       //: XXX
       seq($.expression, ",", commaSep1($.expression), optional(',')),
-      $.assignment,
-      $.augmented_assignment,
-      $.yield
     ),
 
     named_expression: $ => seq(

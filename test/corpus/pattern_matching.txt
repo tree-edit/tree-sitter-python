@@ -63,15 +63,14 @@ match command.split():
           (string)
           (identifier)))
       (block
-        (expression_statement
-          (assignment
-            (identifier)
-            (call
-              (attribute
-                (identifier)
-                (identifier))
-              (argument_list
-                (identifier))))))))
+        (assignment
+          (identifier)
+          (call
+            (attribute
+              (identifier)
+              (identifier))
+            (argument_list
+              (identifier)))))))
   (comment))
 
 ================================================================================
@@ -193,15 +192,14 @@ match command.split():
             (string)
             (string))))
       (block
-        (expression_statement
-          (assignment
-            (identifier)
-            (call
-              (attribute
-                (identifier)
-                (identifier))
-              (argument_list
-                (string)))))))
+        (assignment
+          (identifier)
+          (call
+            (attribute
+              (identifier)
+              (identifier))
+            (argument_list
+              (string))))))
     (case_clause
       (case_pattern
         (binary_operator
@@ -252,15 +250,14 @@ match command.split():
             (as_pattern_target
               (identifier)))))
       (block
-        (expression_statement
-          (assignment
-            (identifier)
-            (call
-              (attribute
-                (identifier)
-                (identifier))
-              (argument_list
-                (identifier)))))))))
+        (assignment
+          (identifier)
+          (call
+            (attribute
+              (identifier)
+              (identifier))
+            (argument_list
+              (identifier))))))))
 
 ================================================================================
 Actually not match
@@ -273,31 +270,27 @@ x, match = 2, "hey, what's up?"
 --------------------------------------------------------------------------------
 
 (module
-  (expression_statement
-    (assignment
+  (assignment
+    (identifier)
+    (integer))
+  (assignment
+    (pattern_list
       (identifier)
+      (identifier))
+    (expression_list
+      (integer)
       (integer)))
-  (expression_statement
-    (assignment
-      (pattern_list
-        (identifier)
-        (identifier))
-      (expression_list
-        (integer)
-        (integer))))
-  (expression_statement
-    (assignment
+  (assignment
+    (identifier)
+    (identifier)
+    (identifier))
+  (assignment
+    (pattern_list
       (identifier)
-      (identifier)
-      (identifier)))
-  (expression_statement
-    (assignment
-      (pattern_list
-        (identifier)
-        (identifier))
-      (expression_list
-        (integer)
-        (string)))))
+      (identifier))
+    (expression_list
+      (integer)
+      (string))))
 
 ================================================================================
 Match is match but not pattern matching
@@ -308,16 +301,14 @@ match = [match]
 --------------------------------------------------------------------------------
 
 (module
-  (expression_statement
-    (assignment
-      (identifier)
-      (list
-        (identifier))))
-  (expression_statement
-    (assignment
-      (identifier)
-      (list
-        (identifier)))))
+  (assignment
+    (identifier)
+    (list
+      (identifier)))
+  (assignment
+    (identifier)
+    (list
+      (identifier))))
 
 ================================================================================
 Match kwargs
@@ -328,15 +319,14 @@ field = call(match=r".*\.txt$")
 --------------------------------------------------------------------------------
 
 (module
-  (expression_statement
-    (assignment
+  (assignment
+    (identifier)
+    (call
       (identifier)
-      (call
-        (identifier)
-        (argument_list
-          (keyword_argument
-            (identifier)
-            (string)))))))
+      (argument_list
+        (keyword_argument
+          (identifier)
+          (string))))))
 
 ================================================================================
 Match kwargs 2
@@ -347,16 +337,15 @@ field = match(match=match, match)
 --------------------------------------------------------------------------------
 
 (module
-  (expression_statement
-    (assignment
+  (assignment
+    (identifier)
+    (call
       (identifier)
-      (call
-        (identifier)
-        (argument_list
-          (keyword_argument
-            (identifier)
-            (identifier))
-          (identifier))))))
+      (argument_list
+        (keyword_argument
+          (identifier)
+          (identifier))
+        (identifier)))))
 
 ================================================================================
 Case used as identifier
@@ -368,25 +357,22 @@ just_in_case = call_me(case=True)
 --------------------------------------------------------------------------------
 
 (module
-  (expression_statement
-    (assignment
+  (assignment
+    (identifier)
+    (list
+      (identifier)))
+  (assignment
+    (identifier)
+    (list
+      (identifier)))
+  (assignment
+    (identifier)
+    (call
       (identifier)
-      (list
-        (identifier))))
-  (expression_statement
-    (assignment
-      (identifier)
-      (list
-        (identifier))))
-  (expression_statement
-    (assignment
-      (identifier)
-      (call
-        (identifier)
-        (argument_list
-          (keyword_argument
-            (identifier)
-            (true)))))))
+      (argument_list
+        (keyword_argument
+          (identifier)
+          (true))))))
 
 ================================================================================
 If guards
@@ -407,19 +393,17 @@ match 0:
         (integer))
       (false)
       (block
-        (expression_statement
-          (assignment
-            (identifier)
-            (false)))))
+        (assignment
+          (identifier)
+          (false))))
     (case_clause
       (case_pattern
         (integer))
       (true)
       (block
-        (expression_statement
-          (assignment
-            (identifier)
-            (true)))))))
+        (assignment
+          (identifier)
+          (true))))))
 
 ================================================================================
 Comma separated cases
@@ -443,20 +427,18 @@ match (0, 1, 2):
       (case_pattern
         (integer))
       (block
-        (expression_statement
-          (assignment
-            (identifier)
-            (integer)))))
+        (assignment
+          (identifier)
+          (integer))))
     (case_clause
       (case_pattern
         (integer))
       (case_pattern
         (identifier))
       (block
-        (expression_statement
-          (assignment
-            (identifier)
-            (integer)))))))
+        (assignment
+          (identifier)
+          (integer))))))
 
 ================================================================================
 case terminating in comma
@@ -473,10 +455,9 @@ match x,:
       (case_pattern
         (identifier))
       (block
-        (expression_statement
-          (assignment
-            (identifier)
-            (integer)))))))
+        (assignment
+          (identifier)
+          (integer))))))
 
 ================================================================================
 Multiple match patterns
@@ -513,22 +494,20 @@ match match:
 --------------------------------------------------------------------------------
 
 (module
-  (expression_statement
+  (assignment
+    (identifier)
     (assignment
       (identifier)
-      (assignment
-        (identifier)
-        (integer))))
+      (integer)))
   (match_statement
     (identifier)
     (case_clause
       (case_pattern
         (identifier))
       (block
-        (expression_statement
-          (assignment
-            (identifier)
-            (integer)))))))
+        (assignment
+          (identifier)
+          (integer))))))
 
 ================================================================================
 Walrus match (Issue #150)

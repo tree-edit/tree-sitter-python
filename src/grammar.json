@@ -97,7 +97,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "expression_statement"
+          "name": "comma_statement"
         },
         {
           "type": "SYMBOL",
@@ -130,6 +130,18 @@
         {
           "type": "SYMBOL",
           "name": "nonlocal_statement"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "assignment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "augmented_assignment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "yield"
         },
         {
           "type": "SYMBOL",
@@ -537,7 +549,7 @@
         }
       ]
     },
-    "expression_statement": {
+    "comma_statement": {
       "type": "CHOICE",
       "members": [
         {
@@ -589,18 +601,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "assignment"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "augmented_assignment"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "yield"
         }
       ]
     },
