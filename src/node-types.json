@@ -2546,37 +2546,6 @@
     "fields": {}
   },
   {
-    "type": "with_clause",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "with_item",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "with_item",
-    "named": true,
-    "fields": {
-      "value": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "expression",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "with_statement",
     "named": true,
     "fields": {
@@ -2589,17 +2558,17 @@
             "named": true
           }
         ]
+      },
+      "value": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "with_clause",
-          "named": true
-        }
-      ]
     }
   },
   {

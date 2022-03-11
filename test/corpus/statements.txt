@@ -497,32 +497,28 @@ with (open('d') as d,
 
 (module
   (with_statement
-    (with_clause
-      (with_item
-        (as_pattern
-          (identifier)
-          (as_pattern_target
-            (identifier)))))
+    (as_pattern
+      (identifier)
+      (as_pattern_target
+        (identifier)))
     (block
       (identifier)))
   (with_statement
-    (with_clause
-      (with_item
-        (tuple
-          (as_pattern
-            (call
-              (identifier)
-              (argument_list
-                (string)))
-            (as_pattern_target
-              (identifier)))
-          (as_pattern
-            (call
-              (identifier)
-              (argument_list
-                (string)))
-            (as_pattern_target
-              (identifier))))))
+    (tuple
+      (as_pattern
+        (call
+          (identifier)
+          (argument_list
+            (string)))
+        (as_pattern_target
+          (identifier)))
+      (as_pattern
+        (call
+          (identifier)
+          (argument_list
+            (string)))
+        (as_pattern_target
+          (identifier))))
     (block
       (identifier))))
 
