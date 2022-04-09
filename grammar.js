@@ -423,15 +423,17 @@ module.exports = grammar({
 
     argument_list: $ => seq(
       '(',
-      optional(commaSep1(
-        choice(
-          $.expression,
-          $.list_splat,
-          $.dictionary_splat,
-          alias($.parenthesized_list_splat, $.parenthesized_expression),
-          $.keyword_argument
-        )
-      )),
+      choice(
+        $.generator_expression,
+        optional(commaSep1(
+          choice(
+            $.expression,
+            $.list_splat,
+            $.dictionary_splat,
+            alias($.parenthesized_list_splat, $.parenthesized_expression),
+            $.keyword_argument
+          )
+        ))),
       optional(','),
       ')'
     ),
@@ -590,7 +592,6 @@ module.exports = grammar({
       $.set_comprehension,
       $.tuple,
       $.parenthesized_expression,
-      $.generator_expression,
       $.ellipsis
     ),
 
@@ -758,7 +759,6 @@ module.exports = grammar({
     call: $ => prec(PREC.call, seq(
       field('function', $.primary_expression),
       field('arguments', choice(
-        $.generator_expression,
         $.argument_list
       ))
     )),
@@ -834,10 +834,8 @@ module.exports = grammar({
     ),
 
     generator_expression: $ => seq(
-      '(',
       field('body', $.expression),
       $._comprehension_clauses,
-      ')'
     ),
 
     _comprehension_clauses: $ => seq(
@@ -853,7 +851,7 @@ module.exports = grammar({
 
     parenthesized_expression: $ => prec(PREC.parenthesized_expression, seq(
       '(',
-      choice($.expression, $.yield),
+      choice($.expression, $.yield, $.generator_expression),
       ')'
     )),
 
