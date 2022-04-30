@@ -734,10 +734,7 @@ module.exports = grammar({
       )
     )),
 
-    attribute: $ => prec(PREC.call, seq(
-      repeat1(seq($.primary_expression, '.')),
-      $.identifier
-    )),
+    attribute: $ => seq(repeat1(seq($.identifier, '.')), $.identifier),
 
     subscript: $ => prec(PREC.call, seq(
       field('value', $.primary_expression),
