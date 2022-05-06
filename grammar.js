@@ -147,14 +147,14 @@ module.exports = grammar({
 
     _import_list: $ => seq(
       commaSep1(field('name', choice(
-        $._dotted_name,
+        $.dotted_name,
         $.aliased_import
       ))),
       optional(',')
     ),
 
     aliased_import: $ => seq(
-      field('name', $._dotted_name),
+      field('name', $.dotted_name),
       'as',
       field('alias', $.identifier)
     ),
@@ -478,6 +478,7 @@ module.exports = grammar({
     )),
 
     _dotted_name: $ => prec.right(sep1($.identifier, '.')),
+    dotted_name: $ => $._dotted_name,
 
     // Patterns
 
