@@ -477,7 +477,7 @@ module.exports = grammar({
       )
     )),
 
-    _dotted_name: $ => sep1($.identifier, '.'),
+    _dotted_name: $ => prec.right(sep1($.identifier, '.')),
 
     // Patterns
 
@@ -734,7 +734,7 @@ module.exports = grammar({
       )
     )),
 
-    attribute: $ => seq(repeat1(seq($.identifier, '.')), $.identifier),
+    attribute: $ => prec(PREC.call, seq($.primary_expression, '.', $._dotted_name)),
 
     subscript: $ => prec(PREC.call, seq(
       field('value', $.primary_expression),

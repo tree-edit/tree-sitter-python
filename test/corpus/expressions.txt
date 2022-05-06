@@ -75,9 +75,8 @@ a.b.c
 
 (module
   (attribute
-    (attribute
-      (identifier)
-      (identifier))
+    (identifier)
+    (identifier)
     (identifier)))
 
 ================================================================================
@@ -425,10 +424,9 @@ a() + b[c] * c.d.e
         value: (identifier)
         subscript: (identifier))
       right: (attribute
-        object: (attribute
-          object: (identifier)
-          attribute: (identifier))
-        attribute: (identifier)))))
+        (identifier)
+        (identifier)
+        (identifier)))))
 
 ================================================================================
 Bitwise operators
@@ -710,15 +708,16 @@ def example():
       (yield
         (parenthesized_expression
           (yield
-            (generator_expression
-              (identifier)
-              (for_in_clause
+            (parenthesized_expression
+              (generator_expression
                 (identifier)
-                (call
+                (for_in_clause
                   (identifier)
-                  (argument_list
-                    (integer)
-                    (integer)))))))))))
+                  (call
+                    (identifier)
+                    (argument_list
+                      (integer)
+                      (integer))))))))))))
 
 ================================================================================
 lambdas

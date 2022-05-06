@@ -635,43 +635,47 @@ dict((a, b) for a, b in d)
 --------------------------------------------------------------------------------
 
 (module
-  (generator_expression
-    (subscript
-      (subscript
-        (identifier)
-        (identifier))
-      (identifier))
-    (for_in_clause
-      (pattern_list
-        (identifier)
-        (identifier)
-        (identifier))
-      (identifier)))
-  (call
-    (identifier)
+  (parenthesized_expression
     (generator_expression
-      (tuple
-        (identifier)
+      (subscript
+        (subscript
+          (identifier)
+          (identifier))
         (identifier))
       (for_in_clause
         (pattern_list
           (identifier)
+          (identifier)
           (identifier))
         (identifier))))
-  (generator_expression
+  (call
     (identifier)
-    (for_in_clause
+    (argument_list
+      (generator_expression
+        (tuple
+          (identifier)
+          (identifier))
+        (for_in_clause
+          (pattern_list
+            (identifier)
+            (identifier))
+          (identifier)))))
+  (parenthesized_expression
+    (generator_expression
       (identifier)
-      (identifier))
-    (for_in_clause
-      (identifier)
-      (identifier)))
-  (generator_expression
-    (identifier)
-    (for_in_clause
-      (identifier)
-      (call
+      (for_in_clause
         (identifier)
-        (argument_list
-          (integer)
-          (integer))))))
+        (identifier))
+      (for_in_clause
+        (identifier)
+        (identifier))))
+  (parenthesized_expression
+    (generator_expression
+      (identifier)
+      (for_in_clause
+        (identifier)
+        (call
+          (identifier)
+          (argument_list
+            (integer)
+            (integer)))))))

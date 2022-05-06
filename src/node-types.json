@@ -274,10 +274,6 @@
         "named": true
       },
       {
-        "type": "generator_expression",
-        "named": true
-      },
-      {
         "type": "identifier",
         "named": true
       },
@@ -375,6 +371,10 @@
         },
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "generator_expression",
           "named": true
         },
         {
@@ -492,27 +492,16 @@
   {
     "type": "attribute",
     "named": true,
-    "fields": {
-      "attribute": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "object": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "primary_expression",
-            "named": true
-          }
-        ]
-      }
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "primary_expression",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -792,10 +781,6 @@
         "types": [
           {
             "type": "argument_list",
-            "named": true
-          },
-          {
-            "type": "generator_expression",
             "named": true
           }
         ]
@@ -2048,6 +2033,10 @@
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "generator_expression",
           "named": true
         },
         {

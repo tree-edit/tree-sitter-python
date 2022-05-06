@@ -588,8 +588,8 @@ async def d(a:str="default", b=c) -> None:
       (typed_parameter
         (identifier)
         type: (attribute
-          object: (identifier)
-          attribute: (identifier))))
+          (identifier)
+          (identifier))))
     body: (block
       (identifier)))
   (function_definition
@@ -904,11 +904,10 @@ class C:
                 (integer))))
           (decorator
             (attribute
-              (attribute
-                (subscript
-                  (identifier)
-                  (integer))
-                (identifier))
+              (subscript
+                (identifier)
+                (integer))
+              (identifier)
               (identifier)))
           (function_definition
             (identifier)
