@@ -10,17 +10,21 @@ import a.b.c
 
 (module
   (import_statement
-    (identifier)
-    (identifier))
-  (import_statement
-    (aliased_import
-      (identifier)
-      (identifier)
+    (dotted_name
+      (identifier))
+    (dotted_name
       (identifier)))
   (import_statement
-    (identifier)
-    (identifier)
-    (identifier)))
+    (aliased_import
+      (dotted_name
+        (identifier)
+        (identifier))
+      (identifier)))
+  (import_statement
+    (dotted_name
+      (identifier)
+      (identifier)
+      (identifier))))
 
 ================================================================================
 Import-from statements
@@ -40,36 +44,44 @@ from ..a import b
 (module
   (import_from_statement
     (identifier)
-    (identifier))
+    (dotted_name
+      (identifier)))
   (import_from_statement
     (identifier)
     (wildcard_import))
   (import_from_statement
     (identifier)
-    (identifier)
-    (identifier))
+    (dotted_name
+      (identifier))
+    (dotted_name
+      (identifier)))
   (import_from_statement
     (identifier)
     (identifier)
-    (identifier))
+    (dotted_name
+      (identifier)))
   (import_from_statement
     (relative_import
       (import_prefix))
-    (identifier))
+    (dotted_name
+      (identifier)))
   (import_from_statement
     (relative_import
       (import_prefix))
-    (identifier))
+    (dotted_name
+      (identifier)))
   (import_from_statement
     (relative_import
       (import_prefix)
       (identifier))
-    (identifier))
+    (dotted_name
+      (identifier)))
   (import_from_statement
     (relative_import
       (import_prefix)
       (identifier))
-    (identifier)))
+    (dotted_name
+      (identifier))))
 
 ================================================================================
 Future import statements
@@ -83,14 +95,20 @@ from __future__ import (absolute_import, division, print_function,
 
 (module
   (future_import_statement
-    (identifier))
+    (dotted_name
+      (identifier)))
   (future_import_statement
-    (identifier))
+    (dotted_name
+      (identifier)))
   (future_import_statement
-    (identifier)
-    (identifier)
-    (identifier)
-    (identifier)))
+    (dotted_name
+      (identifier))
+    (dotted_name
+      (identifier))
+    (dotted_name
+      (identifier))
+    (dotted_name
+      (identifier))))
 
 ================================================================================
 Print statements
