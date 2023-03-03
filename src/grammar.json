@@ -3661,16 +3661,24 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "SYMBOL",
-            "name": "primary_expression"
+            "type": "FIELD",
+            "name": "object",
+            "content": {
+              "type": "SYMBOL",
+              "name": "primary_expression"
+            }
           },
           {
             "type": "STRING",
             "value": "."
           },
           {
-            "type": "SYMBOL",
-            "name": "_dotted_name"
+            "type": "FIELD",
+            "name": "attributes",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_dotted_name"
+            }
           }
         ]
       }
