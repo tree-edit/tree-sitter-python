@@ -25,7 +25,7 @@ const PREC = {
 const SEMICOLON = ';'
 
 module.exports = grammar({
-  name: 'te_python',
+  name: 'python',
 
   extras: $ => [
     $.comment,

@@ -1,5 +1,5 @@
 {
-  "name": "te_python",
+  "name": "python",
   "word": "identifier",
   "rules": {
     "module": {
