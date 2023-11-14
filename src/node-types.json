@@ -2293,6 +2293,10 @@
         {
           "type": "interpolation",
           "named": true
+        },
+        {
+          "type": "string_content",
+          "named": true
         }
       ]
     }
@@ -2892,6 +2896,10 @@
   {
     "type": "return",
     "named": false
+  },
+  {
+    "type": "string_content",
+    "named": true
   },
   {
     "type": "true",
